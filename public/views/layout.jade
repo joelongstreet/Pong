@@ -1,0 +1,23 @@
+!!!
+html
+  head
+    title Pong
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    script(src='/socket.io/socket.io.js')
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/0-init.js')
+    script(src='javascripts/1-border.js')
+    script(src='javascripts/1-controlsscreen.js')
+    script(src='javascripts/1-keys.js')
+    script(src='javascripts/1-racket.js')
+    script(src='javascripts/1-shuttlecock.js')
+    script(src='javascripts/1-transition.js')
+    script(src='javascripts/2-pause.js')
+    script(src='javascripts/3-play.js')
+
+    != body
+
+    script
+        socket = io.connect('/');
