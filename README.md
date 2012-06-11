@@ -1,9 +1,13 @@
-#PONG
+# :zap: PONG :zap:
 
-The pong game is from [Maciej Konieczny](http://narf.pl/)
+A two player pong game controlled by the gyroscope on a mobile device. Visit the following paths for control and viewing:
+    To play as Player 1:
+    /urlroot/p1
+    To play as Player 2:
+    /urlroot/p2
+    To View Game
+    /urlroot/
 
-## What is this?
-A game. You view the gameplay in a web browser and play it on your phone.
+The canvs pong game was created by [Maciej Konieczny](http://narf.pl/) and can be seen [here](https://github.com/narfdotpl/canvas-pong)
 
-## Production
-This is not currently in produciton and can't be viewed
+There is currently no hosted solution.
