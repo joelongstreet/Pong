@@ -6,6 +6,15 @@
   p2_direction = 'down';
 
   $(function() {
+    var h, w;
+    w = Math.round($(window).width() * .95);
+    h = Math.round($(window).height() * .9);
+    $('#pong-canvas').attr('width', w);
+    $('#pong-canvas').attr('height', h);
+    $('#canvas').width(w);
+    $('#canvas').css({
+      'margin-top': $(window).height() * .05
+    });
     pong.play($('#pong-canvas')[0]);
     socket.on('player_1_update', function(data) {
       RACKETS[0].acceleration = Math.abs(data / 50);
