@@ -1,4 +1,5 @@
 // require pong
+var RACKETS = [];
 var pong; if (!pong) throw new Error('pong module has not been loaded');
 
 
@@ -119,6 +120,8 @@ pong.play = function (canvas) {
                     v: {max: 20}
                 }
             }));
+
+            RACKETS = rackets;
         }
         createRackets();
 
@@ -228,6 +231,7 @@ pong.play = function (canvas) {
                 if (!controlsScreen.fadedOut) {
                     controlsScreen.fadeOut();
                 } else {
+                    getSocketContent(); 
                     moveRackets();
                     if (!transition.done) {  // transition from previous game
                         transition.process();  // can't use "do" token :/

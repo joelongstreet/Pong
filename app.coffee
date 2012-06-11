@@ -29,6 +29,7 @@ app.get '/p2', (req, res, next) ->
 
 io.sockets.on 'connection', (socket) ->
     socket.on 'player_1_change', (data) ->
+        console.log 'change'
         socket.broadcast.emit 'player_1_update', data
     socket.on 'player_2_change', (data) ->
         socket.broadcast.emit 'player_2_update', data

@@ -11,7 +11,8 @@
     return window.ondeviceorientation = function(e) {
       var x;
       x = Math.round(e.beta * 10 / 10);
-      if (x !== prev_x) return socket.emit("" + player + "_change", e.beta);
+      if (x !== prev_x) socket.emit("" + player + "_change", e.beta);
+      return prev_x = x;
     };
   });
 

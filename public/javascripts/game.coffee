@@ -1,10 +1,31 @@
+p1_direction    = 'up'
+p2_direction    = 'down'
+
 $ ->
     pong.play($('#pong-canvas')[0]);
 
     socket.on 'player_1_update', (data) ->
-        #console.log data
-        $('#item_1').css 'bottom', data * 20
+        RACKETS[0].acceleration = Math.abs(data/50)
+        if data > 0 then p1_direction = 'up'
+        else p1_direction = 'down'
 
     socket.on 'player_2_update', (data) ->
-        #console.log data
-        $('#item_2').css 'bottom', data * 20
+        RACKETS[1].acceleration = Math.abs(data/50)
+        if data > 0 then p2_direction = 'up'
+        else p2_direction = 'down'
+
+window.getSocketContent = ->
+
+    if p1_direction == 'up'
+        RACKETS[0].up = -> return true
+        RACKETS[0].down = -> return false
+    else
+        RACKETS[0].up = -> return false
+        RACKETS[0].down = -> return true
+
+    if p2_direction == 'up'
+        RACKETS[1].up = -> return true
+        RACKETS[1].down = -> return false
+    else
+        RACKETS[1].up = -> return false
+        RACKETS[1].down = -> return true
